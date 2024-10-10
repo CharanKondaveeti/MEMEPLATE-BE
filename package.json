@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "install": "npm install --legacy-peer-deps"
+    "start": "nodemon server.js"
   },
   "author": "charan kondaveeti",
   "license": "ISC",
