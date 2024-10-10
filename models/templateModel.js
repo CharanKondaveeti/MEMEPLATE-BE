@@ -12,13 +12,13 @@ const templateSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A meme must have a description'],
       trim: true,
-      maxlength: [200, 'A meme description must have less than or equal to 200 characters'],
+      // maxlength: [200, 'A meme description must have less than or equal to 200 characters'],
       minlength: [5, 'A meme description must have more than or equal to 5 characters']
     },
-    emotion: {
-      type: String,
-      required: [true, 'A meme must have an emotion'],
-    },
+    // emotion: {
+    //   type: String,
+    //   required: [true, 'A meme must have an emotion'],
+    // },
     movieName: {
       type: String,
       trim: true,

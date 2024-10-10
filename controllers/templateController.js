@@ -34,12 +34,11 @@ exports.bulkUpload = (req, res) => {
 
     try {
       for (let i = 0; i < req.files.length; i++) {
-        const { description, emotion, movieName, actors } = templatesData[i];
+        const { description, movieName, actors } = templatesData[i];
 
         const newTemplate = new Template({
           memeImage: req.files[i].path,
           description,
-          emotion,
           movieName,
           peopleInMeme: actors.split(',').map(actor => actor.trim()),
           createdAt: Date.now(),
@@ -73,12 +72,11 @@ exports.uploadTemplate = (req, res) => {
       return res.status(500).json({ message: 'Image upload failed', error: err });
     }
 
-    const { description, emotion, movieName, peopleInMeme } = req.body;
+    const { description, movieName, peopleInMeme } = req.body;
 
     const newTemplate = new Template({
       memeImage: req.file.path,  // Updated to match the new schema
       description,
-      emotion,
       movieName,
       actors: peopleInMeme.split(',').map(person => person.trim()), // Updated to use peopleInMeme
       createdAt: Date.now(),
